@@ -2,7 +2,7 @@
 import { megjelenitTabla } from "./AdatokMegjelenitese.js";
 window.addEventListener('load', init)
 function init() {
-  const PEKARUK = [{ nev: "Kakaóscsiga", darab: 20, ar: 350 }, { nev: "Zsemle", darab: 1, ar: 90 }, { nev: "Kifli", darab: 1, ar: 120 }, { nev: "Redbull", darab: 1, ar: 350 }, { nev: "Csokis tej", darab: 1, ar: 220 }];
+  const PEKARUK = [{ nev: "Kakaóscsiga", darab: 1, ar: 350 }, { nev: "Zsemle", darab: 1, ar: 90 }, { nev: "Kifli", darab: 1, ar: 120 }, { nev: "Redbull", darab: 1, ar: 350 }, { nev: "Csokis tej", darab: 1, ar: 220 }];
 
   megjelenitTabla(PEKARUK)
 

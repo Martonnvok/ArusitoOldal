@@ -11,6 +11,7 @@ export function megjelenitTabla(list) {
             <td>Neve</td>
             <td>db</td>
             <td>Ár</td>
+            <td>Hozzáad/Elvessz</td>
         </tr>
     </thead>
     <tbody>`;
@@ -19,6 +20,7 @@ export function megjelenitTabla(list) {
             <td>${list[index].nev}</td>
             <td>${list[index].darab}</td>
             <td>${list[index].ar}</td>
+            <td><button>+</button><button>-</button></td>
             </tr>`;
     }
     htmlkod += ` </tbody >
