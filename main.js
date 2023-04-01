@@ -1,3 +1,4 @@
+/*Ide kerülnek majd a további javascript fájlok meghívása*/ 
 import { megjelenitTabla } from "./AdatokMegjelenitese.js";
 window.addEventListener('load', init)
 function init() {
