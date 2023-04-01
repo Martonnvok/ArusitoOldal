@@ -17,8 +17,8 @@ export function megjelenitTabla(list) {
     <tbody>`;
     for (let index = 0; index < list.length; index++) {
         htmlkod += `<tr>
-            <td>${list[index].nev}Ft</td>
-            <td>${list[index].darab}Ft</td>
+            <td>${list[index].nev}</td>
+            <td>${list[index].darab}</td>
             <td>${list[index].ar}Ft</td>
             <td><button>+</button><button>-</button></td>
             </tr>`;
