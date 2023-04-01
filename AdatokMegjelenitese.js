@@ -4,8 +4,9 @@ export function megjelenitTabla(list) {
 
         `
     <header><h1>Oláh pékség</h1></header> 
-    <table>
-    <thead>
+    <div class="container mt-3">
+    <table class="table">
+    <thead class="table-dark">
         <tr>
             <td>Neve</td>
             <td>db</td>
