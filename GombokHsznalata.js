@@ -22,4 +22,25 @@ export function gombok(list) {
     })
 }
 
-      
+
+
+export function hozzaad(list) {
+    /*
+    const KOSAR = document.querySelectorAll(".kosar");
+    let szamol = 0;
+    KOSAR.forEach((elem, index) => {
+        elem.addEventListener("click", function () {
+            megjelenitTabla(list); // csak azért, hogy frissüljön a kosárban lévő termékek darabszáma
+            szamol = 0; // nullázzuk az összegző változót
+            for (let i = 0; i < list.length; i++) {
+                if (list[i].kosarban) {
+                    szamol += list[i].darab * list[i].ar;
+                }
+            }
+            console.log(szamol); // kiírjuk az összeget a konzolra
+        })
+    })
+    */
+}
+
+

@@ -15,6 +15,7 @@ export function megjelenitTabla(list) {
              <td>db</td>
              <td>Ár</td>
              <td>Hozzáad/Elvessz</td>
+             <td></td>
          </tr>
      </thead>
      <tbody>`;
@@ -24,6 +25,7 @@ export function megjelenitTabla(list) {
              <td>${list[index].darab}</td>
              <td>${list[index].ar}Ft</td>
              <td><button class="jobb">+</button><button class="bal">- </button></td>
+             <td><button class="kosar">Kosárba rakás</button></td>
              </tr>`;
     }
     htmlkod += ` </tbody >
