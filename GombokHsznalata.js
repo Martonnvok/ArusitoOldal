@@ -31,7 +31,7 @@ export function hozzaad(list) {
     KOSAR.forEach((elem, index) => {
         elem.addEventListener("click", function () {
             megjelenitTabla(list); // csak azért, hogy frissüljön a kosárban lévő termékek darabszáma
-            szamol = 0; // nullázzuk az összegző változót
+            szamol = 0; // nullázzuk a változót
             for (let i = 0; i < list.length; i++) {
                 if (list[i].kosarban) {
                     szamol += list[i].darab * list[i].ar;
