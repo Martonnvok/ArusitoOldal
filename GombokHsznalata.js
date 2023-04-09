@@ -6,6 +6,7 @@ export function gombok(list) {
     JOBBELEM.forEach((elem, index) => {
         elem.addEventListener("click", function () {
             list[index].darab++;
+            list[index].ar += [index].darab; //árak növekedése a mennyiség szerint
             megjelenitTabla(list);
             gombok(list);
         })
@@ -15,6 +16,7 @@ export function gombok(list) {
         elem.addEventListener("click", function () {
             if (list[index].darab > 0) {
                 list[index].darab--;
+                list[index].ar -= [index].darab;//árak csökkenése a mennyiség szerint
                 megjelenitTabla(list);
                 gombok(list);
             }
