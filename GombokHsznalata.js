@@ -1,4 +1,4 @@
-import { megjelenitTabla } from "./AdatokMegjelenitese.js";
+import { megjelenitDiv } from "./AdatokMegjelenitese.js";
 export function gombok(list) {
     const BALELEM = document.querySelectorAll(".bal");
     const JOBBELEM = document.querySelectorAll(".jobb");
@@ -8,7 +8,7 @@ export function gombok(list) {
         elem.addEventListener("click", function () {
             list[index].darab++;
             list[index].ar = list[index].alapar * list[index].darab; //árak növekedése a mennyiség szerint
-            megjelenitTabla(list);
+            megjelenitDiv(list);
             gombok(list);
         })
     })
@@ -18,7 +18,7 @@ export function gombok(list) {
             if (list[index].darab > 1) {
                 list[index].darab--;
                 list[index].ar = list[index].ar - list[index].alapar; //árak csökkenése a mennyiség szerint
-                megjelenitTabla(list);
+                megjelenitDiv(list);
                 gombok(list);
             }
         })
