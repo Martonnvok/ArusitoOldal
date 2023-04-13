@@ -1,17 +1,16 @@
 //Az admin felületet jeleníti meg
 export function megjelenitDiv(list) {
     const ARTICLE = document.querySelector("article");
-    const DIVTORLES = ARTICLE.querySelectorAll(".container");
+    const DIVTORLES = ARTICLE.querySelectorAll(".div");
     DIVTORLES.forEach(div => div.remove());
 
     let htmlkod =
         `
-     <div>
+        <div>
              <p>Neve:</p>
              <p>db:</p>
              <p>Ár:</p>
              <p>Hozzáad/Elvessz:</p>
-             
          </div>
      `;
     for (let index = 0; index < list.length; index++) {
@@ -25,16 +24,14 @@ export function megjelenitDiv(list) {
             <p><button class="kosar">Kosárba rakás</button></p>
         </div>`;
     }
-    ARTICLE.innerHTML += htmlkod;
+    ARTICLE.innerHTML = htmlkod;
 }
+
 
 //A felhasználói, weblap elejét jeleníti meg
 export function megjelenitTabla(list) {
     const ARTICLE = document.querySelector("article");
-    const existingTable = ARTICLE.querySelector(".table");
-    if (existingTable) {
-        existingTable.remove();
-    }
+    
     let htmlkod =
         `
      
@@ -45,8 +42,7 @@ export function megjelenitTabla(list) {
              <td>Neve</td>
              <td>db</td>
              <td>Ár</td>
-             <td>Hozzáad/Elvessz</td>
-             <td></td>
+             
          </tr>
      </thead>
      <tbody>`;
@@ -55,8 +51,7 @@ export function megjelenitTabla(list) {
              <td>${list[index].nev}</td>
              <td>${list[index].darab}</td>
              <td>${list[index].ar}Ft</td>
-             <td><button class="jobb">+</button><button class="bal">- </button></td>
-             <td><button class="kosar">Kosárba rakás</button></td>
+             
              </tr>`;
     }
     htmlkod += ` </tbody >
@@ -88,3 +83,10 @@ export function nav() {
 
 
 
+/*Felnem használt vagy felesleges kódok*/
+/*<td><button class="jobb">+</button><button class="bal">- </button></td>
+  <td><button class="kosar">Kosárba rakás</button></td>
+  <td>Hozzáad/Elvessz</td>
+             <td></td>
+  
+  */  
