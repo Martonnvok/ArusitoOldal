@@ -3,10 +3,11 @@ export function gombok(list) {
     const BALELEM = document.querySelectorAll(".bal");
     const JOBBELEM = document.querySelectorAll(".jobb");
 
+
     JOBBELEM.forEach((elem, index) => {
         elem.addEventListener("click", function () {
             list[index].darab++;
-            list[index].ar += [index].darab; //árak növekedése a mennyiség szerint
+            list[index].ar = list[index].alapar * list[index].darab; //árak növekedése a mennyiség szerint
             megjelenitTabla(list);
             gombok(list);
         })
@@ -14,9 +15,9 @@ export function gombok(list) {
 
     BALELEM.forEach((elem, index) => {
         elem.addEventListener("click", function () {
-            if (list[index].darab > 0) {
+            if (list[index].darab > 1) {
                 list[index].darab--;
-                list[index].ar -= [index].darab;//árak csökkenése a mennyiség szerint
+                list[index].ar = list[index].ar - list[index].alapar; //árak csökkenése a mennyiség szerint
                 megjelenitTabla(list);
                 gombok(list);
             }
