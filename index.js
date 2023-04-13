@@ -1,3 +1,4 @@
+/*FELHASZNÁLÓI RÉSZ*/ 
 /*Ide kerülnek majd a további javascript fájlok meghívása*/ 
 import { megjelenitDiv, nav } from "./AdatokMegjelenitese.js";
 import {gombok, hozzaad  } from "./GombokHsznalata.js";

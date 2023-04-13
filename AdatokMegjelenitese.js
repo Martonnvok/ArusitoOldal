@@ -1,3 +1,4 @@
+//Az admin felületet jeleníti meg
 export function megjelenitDiv(list) {
     const ARTICLE = document.querySelector("article");
     const DIVTORLES = ARTICLE.querySelectorAll(".container");
@@ -5,29 +6,29 @@ export function megjelenitDiv(list) {
 
     let htmlkod =
         `
-     <div class="container mt-3">
-         <div>
-             <p>Neve</p>
-             <p>db</p>
-             <p>Ár</p>
-             <p>Hozzáad/Elvessz</p>
-             <p></p>
+     <div>
+             <p>Neve:</p>
+             <p>db:</p>
+             <p>Ár:</p>
+             <p>Hozzáad/Elvessz:</p>
+             
          </div>
      `;
     for (let index = 0; index < list.length; index++) {
-        htmlkod += 
-        `
+        htmlkod +=
+            `
         <div>
-        <p>${list[index].nev}</p>
-        <p>${list[index].darab}</p>
-        <p>${list[index].ar}Ft</p>
-        <p><button class="jobb">+</button><button class="bal">- </button></p>
-        <p><button class="kosar">Kosárba rakás</button></p>
+            <p>${list[index].nev}</p>
+            <p>${list[index].darab}</p>
+            <p>${list[index].ar}Ft</p>
+            <p><button class="jobb">+</button><button class="bal">- </button></p>
+            <p><button class="kosar">Kosárba rakás</button></p>
         </div>`;
     }
-     ARTICLE.innerHTML += htmlkod;
+    ARTICLE.innerHTML += htmlkod;
 }
 
+//A felhasználói, weblap elejét jeleníti meg
 export function megjelenitTabla(list) {
     const ARTICLE = document.querySelector("article");
     const existingTable = ARTICLE.querySelector(".table");
@@ -37,7 +38,7 @@ export function megjelenitTabla(list) {
     let htmlkod =
         `
      
-     <div class="container mt-3">
+     <div class="container mt-3" id="semmi">
      <table class="table">
      <thead class="table-dark">
          <tr>
@@ -60,30 +61,20 @@ export function megjelenitTabla(list) {
     }
     htmlkod += ` </tbody >
      </table >`;
-     ARTICLE.innerHTML += htmlkod;
+    ARTICLE.innerHTML += htmlkod;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+//Navigáció, oldal linkek
 export function nav() {
     const NAV = document.querySelector("nav");
     let nav = "";
     nav +=
-    `<ul>
+        `<ul>
         <li><a href = "public.html">Pékáruk adatainak megtekintése</a></li>
         <li><a class="active" href="index.html">Admin felüet</a></li>
     </ul>`;
     NAV.append(nav);
-  }
+}
 
 /*export function kosarMegjelenites(list) {
     const ASIDE =document.querySelector("aside");
