@@ -35,7 +35,7 @@ export function megjelenitTabla(list) {
     let htmlkod =
         `
      
-     <div class="container mt-3" id="semmi">
+     <div class="container mt-3" class="semmi">
      <table class="table">
      <thead class="table-dark">
          <tr>
@@ -65,16 +65,26 @@ export function nav() {
     let nav = "";
     nav +=
         `<ul>
-        <li><a href = "public.html">Pékáruk adatainak megtekintése</a></li>
-        <li><a class="active" href="index.html">Admin felüet</a></li>
+        <li><a href = "index.html">Pékáruk adatainak megtekintése</a></li>
+        <li><a class="active" href="admin.html">Admin felüet</a></li>
     </ul>`;
-    NAV.append(nav);
+    NAV.innerHTML+=nav;
 }
 
-/*export function kosarMegjelenites(list) {
-    const ASIDE =document.querySelector("aside");
-}*/
+//hozzáadás gomb
+export function hozzaAdas() {
+    const ASIDE = document.querySelector("aside");
+let aside = `
+    <div class="semmi">
+        <button>hozzáadás</button>
+    </div>
 
+    <div class="semmi">
+        <button>elvétel</button>
+    </div>
+`;
+ASIDE.innerHTML += aside;
+}
 
 
 

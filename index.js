@@ -9,7 +9,8 @@ function init() {
   megjelenitDiv(PEKARUK);
   gombok(PEKARUK);
   hozzaad(PEKARUK);
-     
+  
+  nav();
 }
 
 
