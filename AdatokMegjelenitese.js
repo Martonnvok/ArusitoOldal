@@ -1,8 +1,8 @@
 export function megjelenitTabla(list) {
     const ARTICLE = document.querySelector("article");
-    const existingTable = ARTICLE.querySelector(".table");
-    if (existingTable) {
-        existingTable.remove();
+    const TABLETORLES = ARTICLE.querySelector(".table");
+    if (TABLETORLES) {
+        TABLETORLES.remove();
     }
     let htmlkod =
         `
@@ -33,6 +33,9 @@ export function megjelenitTabla(list) {
      ARTICLE.innerHTML += htmlkod;
 }
 
+export function kosarMegjelenites(list) {
+    const ASIDE =document.querySelector("aside");
+}
 
 
 
