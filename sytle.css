@@ -14,12 +14,14 @@ tr{
 
 div{
     /*Flexes elhelyezkedések*/
+    /*
     display: inline-flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     align-content: flex-start;
+    */
 
     /*Keret*/
     border: 1px solid gray;
