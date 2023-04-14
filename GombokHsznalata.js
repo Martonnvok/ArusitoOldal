@@ -85,3 +85,11 @@ export function felugroAblak(list) {
     })
     
 }
+ 
+export function xKattintas(lista) {
+  $(".x").click(function () {
+    const index = $(this).data("index");
+    lista.splice(index, 1);
+    $(this).closest("tr").remove();
+  });
+}

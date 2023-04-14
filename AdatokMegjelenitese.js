@@ -45,7 +45,7 @@ export function megjelenitTabla(list) {
              <td>${list[index].nev}</td>
              <td>${list[index].darab}</td>
              <td>${list[index].ar}Ft</td>
-             <td><button class="btn btn-danger">X</button></td>
+             <td><button class="btn btn-danger" id="x${index}">X</button></td>
              </tr>`;
     }
     htmlkod += ` </tbody >
