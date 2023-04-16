@@ -13,6 +13,7 @@ export function megjelenitDiv(list) {
             <p>Neve: ${list[index].nev}</p>
             <p>db:${list[index].darab}</p>
             <p>Ár: ${list[index].ar}Ft</p>
+            <p>Kép: <img src="${list[index].kep}"</p>
             <p><button class="jobb btn btn-primary">+</button><button class="bal btn btn-primary">- </button></p>
             <p><button class="kosar btn btn-success" id="id${index}">Kosárba rakás</button></p>
             <p><button class="megnezem btn btn-info" id="id${index}">Megnézem</button></p>
@@ -28,9 +29,9 @@ export function megjelenitTabla(list) {
 
     let htmlkod =
         `
-     
-     <div class="container mt-3" class="semmi">
-     <table class="table">
+    
+     <div class="container mt-3 semmi" >
+     <table class="table" id="torol">
      <thead class="table-dark">
          <tr>
              <td>Neve</td>
@@ -51,6 +52,8 @@ export function megjelenitTabla(list) {
     htmlkod += ` </tbody >
      </table >`;
     ARTICLE.append(htmlkod);
+
+    
 }
 
 //Navigáció, oldal linkek
@@ -96,21 +99,7 @@ export function adminHozzaad() {
       </nav>`;
     ASIDE.append(aside);
 }
-export function adminLehuz() {
-    const LEHUZ = $(".lefele");
-    let lehuz = "";
-    LEHUZ.each(function (index, elem) {
-        $(elem).on("click", function () {
-            lehuz += `
-                
-                
-                
-            
-            `
-        });
-    });
-    LEHUZ.append(lehuz);
-}
+
 
 //hozzáadás gomb
 export function hozzaAdas() {

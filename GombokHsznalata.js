@@ -1,4 +1,4 @@
-import { megjelenitDiv } from "./AdatokMegjelenitese.js";
+import { megjelenitDiv, megjelenitTabla } from "./AdatokMegjelenitese.js";
 
 /*Darabok növelése és csökkenése */
 export function gombok(list) {
@@ -86,10 +86,21 @@ export function felugroAblak(list) {
     
 }
  
-export function xKattintas(lista) {
-  $(".x").click(function () {
-    const index = $(this).data("index");
-    lista.splice(index, 1);
-    $(this).closest("tr").remove();
+export function xKattintas(list) {
+  const GOMBOK = $("button[id^='x']");
+  GOMBOK.on("click", function() {
+    const INDEX = parseInt(this.id.substring(1));
+    //list.splice(INDEX, 1);
+    const TABLA = megjelenitTabla(list);
+    
+      list.splice(INDEX, 1);
+      $('#torol').html(TABLA);
+      $('#torol').remove();
+    
+    
+    
+    xKattintas(list);
   });
 }
+
+
