@@ -1,5 +1,6 @@
 /*Alap betűszínek és stílus*/
 body{
+    background-color: black;
     font-family: Verdana, Geneva, Tahoma, sans-seri;
     font-size: 20px;
     margin: 0px;
@@ -9,20 +10,20 @@ h1{
     text-align: center;
 }
 
-tr{
-    border: 1px solid black;
-}
-nav{
 
+nav{
     margin: 10px;
 }
-img{
-    height: 125px;
-}
-article{
 
+article{
     margin: 20px;
 }
+
+aside{
+    margin: 20px;
+}
+
+
 div{
     /*Flexes elhelyezkedések*/
     /*
