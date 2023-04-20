@@ -12,7 +12,9 @@ h1{
 tr{
     border: 1px solid black;
 }
-
+img{
+    height: 125px;
+}
 div{
     /*Flexes elhelyezkedések*/
     /*
@@ -44,4 +46,6 @@ ul{
 }
 
 
-
+button{
+    margin: 5px;
+}

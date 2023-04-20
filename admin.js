@@ -4,8 +4,9 @@ import { megjelenitTabla, nav, hozzaAdas, adminHozzaad } from "./AdatokMegjeleni
 import { gombok, hozzaad, xKattintas } from "./GombokHsznalata.js";
 window.addEventListener('load', init)
 function init() {
-  const PEKARUK = [{ nev: "Kakaóscsiga", darab: 1, ar: 350, alapar: 350, kep:"kepek/csiga.jpeg" }, { nev: "Zsemle", darab: 1, ar: 90, alapar: 90 }, { nev: "Kifli", darab: 1, ar: 120, alapar: 120 }, { nev: "Redbull", darab: 1, ar: 350, alapar: 350 }, { nev: "Csokis tej", darab: 1, ar: 220, alapar: 220 }];
+  const PEKARUK = [{ nev: "Kakaóscsiga", darab: 1, ar: 350, alapar: 350 }, { nev: "Zsemle", darab: 1, ar: 90, alapar: 90 }, { nev: "Kifli", darab: 1, ar: 120, alapar: 120 }, { nev: "Redbull", darab: 1, ar: 350, alapar: 350 }, { nev: "Csokis tej", darab: 1, ar: 220, alapar: 220 }];
 
+  
   /*Tábla */
   megjelenitTabla(PEKARUK);
   gombok(PEKARUK);
@@ -15,9 +16,7 @@ function init() {
   /*Szerkesztés */
   nav();
   adminHozzaad();
-  hozzaAdas();
-  
-
+  hozzaAdas(PEKARUK);
 }
 
 
