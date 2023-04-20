@@ -89,9 +89,11 @@ export function megjelenitTabla(adatok) {
       </table>
     </div>
   `;
-  ARTICLE.append(htmlkod);
-  xKattintas(adatok);
+  ARTICLE.html(htmlkod);
+
+  xKattintas(adatok); // hívjuk meg az xKattintas függvényt a megfelelő paraméterekkel
 }
+
 
 //Navigáció, oldal linkek
 export function nav() {
