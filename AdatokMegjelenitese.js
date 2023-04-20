@@ -158,7 +158,7 @@ export function hozzaAdas(adatok) {
   const ASIDE = $("aside");
   let aside = `
       <div class="semmi">
-        <button class="kosar btn btn-success btn-sm" id="b">Hozzáadás</button>
+        <button class="kosar btn btn-success" id="b">Hozzáadás</button>
       </div>
     `;
   ASIDE.append(aside);
