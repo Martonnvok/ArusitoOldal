@@ -1,31 +1,71 @@
 //A piaci rész felületet jeleníti meg
+import { xKattintas } from "./GombokHsznalata.js";
 export function megjelenitDiv(list) {
-    const ARTICLE = $("article");
-    const DIVTORLES = ARTICLE.find(".div");
-    DIVTORLES.remove();
+  const ARTICLE = $("article");
+  const DIVTORLES = ARTICLE.find(".div");
+  const MODALID = $("#myModal .modal-contenct")
+  DIVTORLES.remove();
 
-    let htmlkod = `<div class="row"> `;
-    for (let index = 0; index < list.length; index++) {
-        htmlkod +=
-            `    
+  let htmlkod = `<div class="semmi row"> `;
+  for (let index = 0; index < list.length; index++) {
+    htmlkod +=
+      `    
         
-        <div class="col-3 col-3">
+        <div class=" col-3 col-3">
             <p>Neve: ${list[index].nev}</p>
             <p>db:${list[index].darab}</p>
             <p>Ár: ${list[index].ar}Ft</p>
-            <p>Kép: <img src="${list[index].kep}"</p>
+            <p>Kép: <img class="img-fluid" src="${list[index].kep}" alt="kep${index}"></p>
             <p><button class="jobb btn btn-primary">+</button><button class="bal btn btn-primary">- </button></p>
-            <p><button class="kosar btn btn-success" id="id${index}">Kosárba rakás</button></p>
-            <p><button class="megnezem btn btn-info" id="id${index}">Megnézem</button></p>
+            <p><button class="kosar btn btn-success" id="id1${index}">Kosárba rakás</button></p>
+            <p><button class="class2 megnezem btn btn-info" data-bs-toggle="modal">Megnézem</button></p>
         </div>`;
-    }
-    ARTICLE.html(htmlkod);
+  }
+
+ 
+
+  /*
+  const KOSARAK = $(".class2");
+  KOSARAK.on("click",function()  {
+  let id = even.target.id;
+  let bruh = `
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+    Open modal
+  </button>
+  
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h4 class="modal-title">${list[id].nev}</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <div class="modal-body">
+          Modal body..
+        </div>
+  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+    `;
+    MODALID.html(bruh);
+  })
+  megjegyzés: data-bs-target="#myModal"
+  */
+  ARTICLE.html(htmlkod);
 }
 
 //Az admin, weblap elejét jeleníti meg
 
 export function megjelenitTabla(adatok) {
-    
+
   const ARTICLE = $("article");
 
   let htmlkod = `
@@ -57,17 +97,21 @@ export function megjelenitTabla(adatok) {
     </div>
   `;
   ARTICLE.append(htmlkod);
+  xKattintas(adatok);
 }
 
 //Navigáció, oldal linkek
 export function nav() {
-    const NAV = $("nav");
-    let nav = "";
-    nav +=
-        `
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  const HEADER = $("header");
+  let header = "";
+  header += `<h1>Oláh Pékség</h1>`;
+  const NAV = $("nav");
+  let nav = "";
+  nav +=
+    `
+        <nav class=" navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navigációk</a>
+    <a class="navbar-brand" >Navigációk</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -83,12 +127,15 @@ export function nav() {
     </div>
   </div>
 </nav>`;
-    NAV.append(nav);
+  NAV.append(nav);
 }
 
 export function adminHozzaad() {
-    const ASIDE = $("aside");
-    let aside = `
+  const HEADER = $("header");
+  let header = "";
+  header += `<h1>Oláh Pékség</h1>`;
+  const ASIDE = $("aside");
+  let aside = `
       <nav class="navbar navbar-expand-sm bg-light">
         <div class="container-fluid">
           <ul class="navbar-nav">
@@ -111,38 +158,47 @@ export function adminHozzaad() {
         </div>
       </nav>
     `;
-    ASIDE.append(aside);
-  }
+  ASIDE.append(aside);
+  HEADER.append(header);
+}
 
 
 //hozzáadás gomb
 export function hozzaAdas(adatok) {
-    const ASIDE = $("aside");
-    let aside = `
+  const ASIDE = $("aside");
+  let aside = `
       <div class="semmi">
         <button id="b">Hozzáadás</button>
       </div>
     `;
-    ASIDE.append(aside);
-  
-    $("#b").click(() => {
-      let nev = $("#nev").val();
-      let darab = $("#darab").val();
-      let ar = $("#ar").val();
-      adatok.push({nev: nev, darab: darab, ar: ar});
-  
-      $("article").empty();
-      megjelenitTabla(adatok);
-    });
-  }
+  ASIDE.append(aside);
+
+  $("#b").click(() => {
+    let nev = $("#nev").val();
+    let darab = $("#darab").val();
+    let ar = $("#ar").val();
+    adatok.push({ nev: nev, darab: darab, ar: ar });
+
+    $("article").empty();
+    megjelenitTabla(adatok);
+  });
+}
 
 //kosár megjelenítése
 export function kosarMegjelenit() {
-    const ASIDE = $("aside");
-    let aside = `
+  const ASIDE = $("aside");
+  let aside = `
         <div class="semmi">
+        <p>Kosár össz:</p>
         <p class="szamol">0</p>
         </div>
     `;
-    ASIDE.append(aside);
+  ASIDE.append(aside);
+
+  
+}
+
+export function mutat(list) {
+  
+    
 }

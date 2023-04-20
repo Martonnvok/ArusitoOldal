@@ -31,9 +31,9 @@ export function gombok(list) {
             console.log("Darabok száma:", darabokSzama);
         });
         /*Ellenőri hogy ne menjen túl 0-tól mínuszos irányba */
-        if ( list[index].darab<=1) {
-            list[index].darab=1;
-            list[index].ar=list[index].alapar;
+        if (list[index].darab <= 1) {
+            list[index].darab = 1;
+            list[index].ar = list[index].alapar;
         }
     });
 }
@@ -90,7 +90,6 @@ export function xKattintas(list) {
   const GOMBOK = $("button[id^='x']");
   GOMBOK.on("click", function() {
     const INDEX = parseInt(this.id.substring(1));
-    //list.splice(INDEX, 1);
     const TABLA = megjelenitTabla(list);
     
       list.splice(INDEX, 1);
@@ -102,7 +101,3 @@ export function xKattintas(list) {
     xKattintas(list);
   });
 }
-
-
-
-

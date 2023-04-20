@@ -18,12 +18,3 @@ function init() {
   adminHozzaad();
   hozzaAdas(PEKARUK);
 }
-
-
-
-
-
-
-
-
-

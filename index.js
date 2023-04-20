@@ -10,7 +10,6 @@ function init() {
   kosarMegjelenit();
   megjelenitDiv(PEKARUK);
   nav();
-
   /*Gombok */
   gombok(PEKARUK);
   hozzaad(PEKARUK);
@@ -18,12 +17,3 @@ function init() {
   
  
 }
-
-
-
-
-
-
-
-
-

@@ -12,8 +12,16 @@ h1{
 tr{
     border: 1px solid black;
 }
+nav{
+
+    margin: 10px;
+}
 img{
     height: 125px;
+}
+article{
+
+    margin: 20px;
 }
 div{
     /*Flexes elhelyezkedések*/
