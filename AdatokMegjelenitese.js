@@ -6,9 +6,7 @@ export function megjelenitDiv(list) {
   const MODALID = $("#myModal .modal-content");
   DIVTORLES.remove();
 
-  const HEADER = $("header");
-  let header = "";
-  header += `<h1 class="text-warning">Oláh Pékség</h1>`;
+  
 
   let htmlkod = `<div class="semmi row bg-secondary p-3"> `;
   for (let index = 0; index < list.length; index++) {
@@ -51,7 +49,7 @@ export function megjelenitDiv(list) {
   });
 */
   ARTICLE.html(htmlkod);
-  HEADER.append(header);
+  
 }
 
 
@@ -97,6 +95,10 @@ export function megjelenitTabla(adatok) {
 
 //Navigáció, oldal linkek
 export function nav() {
+  const HEADER = $("header");
+  let header = "";
+  header += `<h1 class="text-warning">Oláh Pékség</h1>`;
+  HEADER.append(header);
   const NAV = $("nav");
   let nav = "";
   nav +=
@@ -123,9 +125,6 @@ export function nav() {
 }
 
 export function adminHozzaad() {
-  const HEADER = $("header");
-  let header = "";
-  header += `<h1 class="text-warning">Oláh Pékség</h1>`;
   const ASIDE = $("aside");
   let aside = `
       <nav class="navbar navbar-expand-sm bg-light">
@@ -151,7 +150,6 @@ export function adminHozzaad() {
       </nav>
     `;
   ASIDE.append(aside);
-  HEADER.append(header);
 }
 
 
