@@ -91,13 +91,13 @@ export function xKattintas(list) {
   GOMBOK.on("click", function() {
     const INDEX = parseInt(this.id.substring(1));
     const TABLA = megjelenitTabla(list);
+    $('#torol').remove();
+    $('#torol').html(TABLA);
     
-      list.splice(INDEX, 1);
-      $('#torol').html(TABLA);
-      $('#torol').remove();
+    list.splice(INDEX, 1);
+      
     
     
     
-    xKattintas(list);
   });
 }
